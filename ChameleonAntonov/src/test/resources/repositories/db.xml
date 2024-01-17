@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DbGears xmlns="http://chameleon.ibs-qa.ru/schema/db">
+    <Connection name="H2" driver="org.h2.Driver" url="jdbc:h2:tcp://localhost:9092/mem:testdb;DB_CLOSE_DELAY=-1;user=#{user};password=#{pass}" autoCommit="true">
+    <Params>
+        <FieldString name="User Name" locator="user"/>
+        <FieldString name="Password" locator="pass"/>
+    </Params>
+        <Params>
+            <FieldString name="User Name" locator="user"/>
+            <FieldString name="Password" locator="pass"/>
+        </Params>
+    </Connection>
+    <Query name="Выведение таблицы без добавленного товара" statement="SELECT * FROM FOOD ">
+        <Result>
+            <FieldString name="FOOD_ID" locator="food_id"/>
+            <FieldString name="FOOD_NAME" locator="food_name"/>
+            <FieldString name="FOOD_TYPE" locator="food_type"/>
+            <FieldString name="FOOD_EXOTIC" locator="food_exotic"/>
+        </Result>
+    </Query>
+    <Query name="Добавление товара" statement="classpath:/sql/insert.sql">
+        <Params>
+            <FieldString name="FOOD_ID" locator="food_id"/>
+            <FieldString name="FOOD_NAME" locator="food_name"/>
+            <FieldString name="FOOD_TYPE" locator="food_type"/>
+            <FieldString name="FOOD_EXOTIC" locator="food_exotic"/>
+        </Params>
+    </Query>
+    <Query name="Выведение таблицы c добавленным товаром" statement="SELECT * FROM FOOD ">
+        <Result>
+            <FieldString name="FOOD_ID" locator="food_id"/>
+            <FieldString name="FOOD_NAME" locator="food_name"/>
+            <FieldString name="FOOD_TYPE" locator="food_type"/>
+            <FieldString name="FOOD_EXOTIC" locator="food_exotic"/>
+        </Result>
+    </Query>
+</DbGears>

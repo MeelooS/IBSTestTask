@@ -52,7 +52,7 @@ public class MyOwnSteps extends BaseClass {
     @И("поле {string} заполняется значением  {string}")
     public void поле_заполняется_значением(String string, String string2) {
         WebElement btnElement4;
-        btnElement4 = driver.findElement(By.xpath("//input[@placeholder='Наименование' and @id='name']"));
+        btnElement4 = driver.findElement(By.xpath("//div/input[@id= 'name']"));
         btnElement4.sendKeys("!\"№;%:?*()_+/ЭЖХЪ,ЮБ12312роффшkjhjksojhiHDhuhUHГРГРои");
         Assertions.assertEquals("!\"№;%:?*()_+/ЭЖХЪ,ЮБ12312роффшkjhjksojhiHDhuhUHГРГРои",
                 btnElement4.getAttribute("value"), "Другое значение!");

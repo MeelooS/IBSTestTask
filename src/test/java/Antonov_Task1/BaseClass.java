@@ -21,7 +21,7 @@ public class BaseClass {
 
     public static WebDriver driver = new ChromeDriver() ;
 
-  /*  @BeforeAll
+    @BeforeAll
     public static void openDriver()throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
@@ -34,7 +34,7 @@ public class BaseClass {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
-    } */
+    } 
 
 }
 
